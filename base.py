@@ -62,9 +62,14 @@ class Aplicação():
         self.lb_resposta.place(relx=0.1, rely=0.02, relwidth=0.8, relheight=0.4)
 
     def limpar(self):
+
         self.cod_entry_x_quadrado.delete(0)
         self.cod_entry_x.delete(0)
         self.cod_entry_numero.delete(0)
+
+        self.cod_entry_x_quadrado.delete(0, END)
+        self.cod_entry_x.delete(0, END)
+        self.cod_entry_numero.delete(0, END)
         self.lb_resposta["text"] = ""
 
        
@@ -79,7 +84,6 @@ class Aplicação():
             self.lb_resposta["text"] = f.baskara(value_a, value_b, value_c)
         except ValueError:
              self.lb_resposta["text"] = "Digite somente números"
-
 
 
 Aplicação()
